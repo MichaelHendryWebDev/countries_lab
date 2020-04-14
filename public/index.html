@@ -7,6 +7,12 @@
   </head>
   <body>
     <div id="app">
+      <h1>Country flags</h1>
+      <label for="country-name">Select Country</label>
+      <select name="country-name" v-model="selectedCountry" >
+        <option value="" v-bind:value="country" v-for="country in countries"> {{ country.name }} </option>
+      </select>
+      <img id="flag-img" v-if="selectedCountry" :src="selectedCountry.flag">
 
     </div>
   </body>
